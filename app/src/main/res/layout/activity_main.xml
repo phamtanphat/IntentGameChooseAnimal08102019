@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textviewThoiGian"
+        android:textSize="30sp"
+        android:text="Time : 3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <ImageView
+        android:id="@+id/imageviewHinhGoc"
+        android:layout_marginTop="50dp"
+        android:layout_centerHorizontal="true"
+
+        android:layout_width="250dp"
+        android:layout_height="250dp"/>
+
+    <TextView
+        android:textStyle="bold"
+        android:textSize="20sp"
+
+        android:textColor="#fff"
+        android:layout_marginTop="50dp"
+        android:gravity="center"
+        android:textAllCaps="true"
+        android:text="Ấn vào hình bên dưới để lựa chọn"
+        android:layout_below="@id/imageviewHinhGoc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textviewTieuDe"/>
+
+    <ImageView
+        android:layout_below="@id/textviewTieuDe"
+        android:id="@+id/imageviewHinhChon"
+        android:layout_marginTop="50dp"
+        android:layout_centerHorizontal="true"
+
+        android:layout_width="250dp"
+        android:layout_height="250dp"/>
+
+    <FrameLayout
+        android:visibility="gone"
+        android:id="@+id/framelayout"
+        android:background="#CCA3A3A3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageButton
+            android:id="@+id/imagebuttonPlay"
+            android:layout_gravity="center"
+            android:layout_width="250dp"
+            android:layout_height="250dp"/>
+    </FrameLayout>
+</RelativeLayout>

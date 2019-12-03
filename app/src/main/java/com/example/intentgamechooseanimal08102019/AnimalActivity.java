@@ -18,6 +18,10 @@ public class AnimalActivity extends AppCompatActivity {
         Intent intent = getIntent();
         int time = intent.getIntExtra("currentTime",-1);
         countDownTime(time);
+        // 18 hinh
+        // so cot : 3 Image
+        // so dong : 6 Tabrow
+
 
     }
     private void countDownTime(int time) {

@@ -2,6 +2,7 @@ package com.example.intentgamechooseanimal08102019;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
@@ -28,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
     int mValueHinhGoc = 0;
     int mCurrentime = 0;
     Handler mHandler = new Handler();
-
+    int Request_Code_Animal = 123;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,6 +45,15 @@ public class MainActivity extends AppCompatActivity {
                 mFrameLayout.setVisibility(View.GONE);
                 randomImage();
                 countDownTime(0);
+            }
+        });
+        mImgHinhChon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,AnimalActivity.class);
+                intent.putExtra("currentTime",mCurrentime);
+                mHandler.removeCallbacks(runnable);
+                startActivityForResult(intent,Request_Code_Animal);
             }
         });
     }
@@ -75,6 +85,7 @@ public class MainActivity extends AppCompatActivity {
                 mTxtTime.setText("Time : " + (5 - mCurrentime++));
                 mHandler.postDelayed(runnable, 1000);
             } else {
+                mHandler.removeCallbacks(runnable);
                 Toast.makeText(MainActivity.this, "Hết giờ", Toast.LENGTH_SHORT).show();
             }
         }

@@ -10,7 +10,7 @@
         android:textColor="@color/colorPrimaryDartApp"
         android:id="@+id/textviewThoiGian"
         android:textSize="30sp"
-        android:text="Time : 3"
+        tools:text="Time : 3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
     <ImageView

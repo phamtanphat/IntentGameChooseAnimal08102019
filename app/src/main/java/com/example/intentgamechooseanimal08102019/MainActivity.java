@@ -1,5 +1,6 @@
 package com.example.intentgamechooseanimal08102019;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -90,4 +91,27 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     };
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        if (requestCode == Request_Code_Animal && resultCode == RESULT_OK && data != null){
+            int valueHinhChon = data.getIntExtra("valueHinh",-1);
+            mTxtTime.setText("Time : " + 1);
+            mCurrentime = 0;
+            mImgHinhChon.setImageResource(valueHinhChon);
+            if (valueHinhChon == mValueHinhGoc){
+                Toast.makeText(this, "Chính xác", Toast.LENGTH_SHORT).show();
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        randomImage();
+                        countDownTime(0);
+                    }
+                },1000);
+            }else{
+                Toast.makeText(this, "Sai rồi", Toast.LENGTH_SHORT).show();
+            }
+        }
+        super.onActivityResult(requestCode, resultCode, data);
+    }
 }

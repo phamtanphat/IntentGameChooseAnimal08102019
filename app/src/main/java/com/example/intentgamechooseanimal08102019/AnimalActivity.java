@@ -46,9 +46,9 @@ public class AnimalActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         Intent intent = new Intent();
-                        intent.putExtra("currentTime",mCurrentime);
                         intent.putExtra("valueHinh",Integer.parseInt(imageView.getTag().toString()));
                         setResult(RESULT_OK,intent);
+                        mHandler.removeCallbacks(runnable);
                         finish();
                     }
                 });

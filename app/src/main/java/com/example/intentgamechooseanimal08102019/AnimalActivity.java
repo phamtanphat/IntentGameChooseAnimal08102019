@@ -56,7 +56,6 @@ public class AnimalActivity extends AppCompatActivity {
             }
             tableLayout.addView(tableRow);
         }
-
     }
     private void countDownTime(int time) {
         mCurrentime = time;
@@ -70,9 +69,7 @@ public class AnimalActivity extends AppCompatActivity {
                 mHandler.postDelayed(runnable, 1000);
             } else {
                 mHandler.removeCallbacks(runnable);
-                Intent intent = new Intent();
-                intent.putExtra("currentTime",1);
-                setResult(RESULT_CANCELED,intent);
+                setResult(RESULT_CANCELED);
                 finish();
                 Toast.makeText(AnimalActivity.this, "Hết giờ", Toast.LENGTH_SHORT).show();
             }

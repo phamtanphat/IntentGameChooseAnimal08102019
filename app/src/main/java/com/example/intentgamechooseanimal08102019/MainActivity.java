@@ -112,6 +112,11 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this, "Sai rồi", Toast.LENGTH_SHORT).show();
             }
         }
+        if (requestCode == Request_Code_Animal && resultCode == RESULT_CANCELED){
+            mTxtTime.setText("Time : " + 1);
+            mCurrentime = 0;
+            Toast.makeText(this, "Sai rồi", Toast.LENGTH_SHORT).show();
+        }
         super.onActivityResult(requestCode, resultCode, data);
     }
 }
